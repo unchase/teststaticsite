@@ -44,17 +44,12 @@
 </head>
 <body>
     <div id="app" class="main-app">
-        <!--   main menu   -->
-        <!--   main menu   -->
         <appmenu></appmenu>
         <div class="main-content">
-            <!--   main content for every pages   -->
-            <router-view></router-view>
             <suggest title="Блог" :fields="fields" url="https://github.com/unchase/awesome-russian-it/new/master/data/blogs"></suggest>
 
 
         </div>
-        <!--   main footer   -->
         <appfooter description="Описание программы."></appfooter>
     </div>
 
@@ -69,7 +64,7 @@
                     fields: [
                         {
                             name: "Feed",
-                            description: "<strong>Обязательный.</strong> A URL to the feed for the blog (the format will be auto-detected).",
+                            description: "<b>Обязательный.</b> A URL to the feed for the blog (the format will be auto-detected).",
                             required: true
                         },
                         {
