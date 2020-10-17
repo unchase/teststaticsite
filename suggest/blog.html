@@ -119,6 +119,9 @@
     Vue.component('apppreloader',
         httpVueLoader('../../components/apppreloader.vue'));
 
+    Vue.component('suggest',
+        httpVueLoader('./suggest.vue'));
+
     Vue.mixin({
         methods: {
             getCard: function(cardData) {
