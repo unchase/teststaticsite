@@ -64,6 +64,9 @@
 
     // Регистрируем vue-компоненты
 
+    Vue.component('appcards',
+        httpVueLoader('../components/appcards.vue'));
+
     Vue.component('appfooter',
         httpVueLoader('../components/appfooter.vue'));
 
@@ -103,112 +106,40 @@
     });
 
     /*********
-		* components
-		*********/
-    // main app menu component
- //   Vue.component("app-menu", {
- //       template: `
-	//	<nav class="green lighten-1">
-	//	<div class="nav-wrapper container">
-	//		<div class="col s12">
-	//		<router-link to="/" class="brand-logo">LOGO</router-link>
-	//		<ul id="nav-mobile" class="right hide-on-med-and-down">
-	//		<li><router-link to="/">Домашняя</router-link></li>
-	//		<li><router-link to="/about">О программе</router-link></li>
-	//		<li><router-link to="/contacts">Контакты</router-link></li>
-	//		<li><router-link to="/404">404</router-link></li>
-	//		</ul>
-	//		</div>
-	//	</div>
-	//	</nav>
-	//`
- //   });
+	* components
+	*********/
 
     // card component for contact page
     // with props
-    Vue.component("app-cards", {
-        props: ["contactlist"],
-        methods: {
-            ucfirst: function (string) {
-                return string.charAt(0).toUpperCase() + string.slice(1);
-            }
-        },
-        template: `
-		<div class="row">
-		<div class="col s6" v-for="cc in contactlist.results">
-			<div class="card horizontal">
-				<div class="card-stacked">
-					<div class="card-content">
-					<div class="img-profile-pic">
-						<img :src="cc.picture.medium" alt="" class="circle responsive-img">
-					</div>
-					<h5>{{ ucfirst(cc.name.title) }} {{ ucfirst(cc.name.first) }} {{ ucfirst(cc.name.last) }}<br><small>#{{ cc.id.name }}{{ cc.id.value }}</small></h5>
-					<p><i class="material-icons tiny">person</i> {{ ucfirst(cc.gender) }}</p>
-					<p><i class="material-icons tiny">email</i> {{ cc.email }}</p>
-					<p><i class="material-icons tiny">location_on</i> {{ ucfirst(cc.location.street) }} {{ ucfirst(cc.location.city) }} {{ ucfirst(cc.location.state) }} {{ cc.location.postcode }}</p>
-					<p><i class="material-icons tiny">local_phone</i> {{ cc.phone }}</p>
-					<p><i class="material-icons tiny">contact_phone</i> {{ cc.cell }}</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-		`
-    });
-
-    // main app preloader component
-    // show preloader when fetching api
-    Vue.component("app-preloader", {
-        template: `
-		<div class="center-align">
-			<div class="preloader-wrapper big active">
-			<div class="spinner-layer spinner-blue-only">
-			<div class="circle-clipper left">
-				<div class="circle"></div>
-			</div>
-			<div class="gap-patch">
-				<div class="circle"></div>
-			</div>
-			<div class="circle-clipper right">
-				<div class="circle"></div>
-			</div>
-			</div>
-		</div>
-		</div>
-	`
-    });
-
-    // main app footer component
-  //  Vue.component("app-footer", {
-  //      template: `
-		//<footer class="page-footer green lighten-1">
-		//		<div class="container">
-		//		<div class="row">
-		//			<div class="col l6 s12">
-		//			<h5 class="white-text">Footer Content</h5>
-		//			<p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-		//			</div>
-		//			<div class="col l4 offset-l2 s12">
-		//			<h5 class="white-text">Links</h5>
-		//			<ul>
-		//				<li><router-link class="grey-text text-lighten-3" to="/random-link">Random Link</router-link></li>
-		//				<li><router-link class="grey-text text-lighten-3" to="/">Домашняя</router-link></li>
-		//				<li><router-link class="grey-text text-lighten-3" to="/about">О программе</router-link></li>
-		//				<li><router-link class="grey-text text-lighten-3" to="/contacts">Контакты</router-link></li>
-		//			</ul>
-		//			</div>
-		//		</div>
-		//		</div>
-		//		<div class="footer-copyright">
-		//		<div class="container">
-		//		© 2020 unchase - Все права защищены
-		//		<a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-		//		</div>
-		//		</div>
-		//	</footer>
-		//`
-  //  });
-
+ //   Vue.component("app-cards", {
+ //       props: ["contactlist"],
+ //       methods: {
+ //           ucfirst: function (string) {
+ //               return string.charAt(0).toUpperCase() + string.slice(1);
+ //           }
+ //       },
+ //       template: `
+	//	<div class="row">
+	//	<div class="col s6" v-for="cc in contactlist.results">
+	//		<div class="card horizontal">
+	//			<div class="card-stacked">
+	//				<div class="card-content">
+	//				<div class="img-profile-pic">
+	//					<img :src="cc.picture.medium" alt="" class="circle responsive-img">
+	//				</div>
+	//				<h5>{{ ucfirst(cc.name.title) }} {{ ucfirst(cc.name.first) }} {{ ucfirst(cc.name.last) }}<br><small>#{{ cc.id.name }}{{ cc.id.value }}</small></h5>
+	//				<p><i class="material-icons tiny">person</i> {{ ucfirst(cc.gender) }}</p>
+	//				<p><i class="material-icons tiny">email</i> {{ cc.email }}</p>
+	//				<p><i class="material-icons tiny">location_on</i> {{ ucfirst(cc.location.street) }} {{ ucfirst(cc.location.city) }} {{ ucfirst(cc.location.state) }} {{ cc.location.postcode }}</p>
+	//				<p><i class="material-icons tiny">local_phone</i> {{ cc.phone }}</p>
+	//				<p><i class="material-icons tiny">contact_phone</i> {{ cc.cell }}</p>
+	//				</div>
+	//			</div>
+	//		</div>
+	//	</div>
+	//</div>
+	//	`
+ //   });
 
     // home page component
     const HomeComponent = {
@@ -377,9 +308,9 @@
         template: `
             <div class="page-template page-template-contact container">
                 <h1>Contacts</h1>
-                <app-preloader v-if="isLoading" />
+                <apppreloader v-if="isLoading" />
                 <div v-if="_.isEmpty(contacts) === false">
-                    <app-cards :contactlist="contacts" />
+                    <appcards :contactlist="contacts" />
                 </div>
             </div>
         `
@@ -402,8 +333,8 @@
     };
 
     /*************
-        ** Routing **
-        *************/
+    ** Routing **
+    *************/
     const routes = [
         { path: "/", component: HomeComponent },
         { path: "/about", component: AboutComponent },
@@ -415,8 +346,8 @@
     });
 
     /**********************
-        ** Main application **
-        **********************/
+    ** Main application **
+    **********************/
     const app = new Vue({
         el: "#app",
         router
