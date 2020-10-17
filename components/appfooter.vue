@@ -9,10 +9,13 @@
                 <div class="col l4 offset-l2 s12">
                     <h5 class="white-text">Ссылки</h5>
                     <ul>
-                        <li><router-link class="grey-text text-lighten-3" to="/random-link">Random Link</router-link></li>
-                        <li><router-link class="grey-text text-lighten-3" to="/">Домашеняя</router-link></li>
-                        <li><router-link class="grey-text text-lighten-3" to="/about">О программе</router-link></li>
-                        <li><router-link class="grey-text text-lighten-3" to="/contacts">Контакты</router-link></li>
+                        <li><router-link class="grey-text text-lighten-3" to="/">Домашняя</router-link></li>
+                        <li><router-link class="grey-text text-lighten-3" to="/events">События</router-link></li>
+                        <li><router-link class="grey-text text-lighten-3" to="/podcasts">Подкасты</router-link></li>
+                        <li><router-link class="grey-text text-lighten-3" to="/blogs">Блоги</router-link></li>
+                        <li><router-link class="grey-text text-lighten-3" to="/channels">Каналы</router-link></li>
+                        <!--<li><router-link class="grey-text text-lighten-3" to="/about">О программе</router-link></li>
+                        <li><router-link class="grey-text text-lighten-3" to="/contacts">Контакты</router-link></li>-->
                     </ul>
                 </div>
             </div>
