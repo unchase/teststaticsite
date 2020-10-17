@@ -58,6 +58,9 @@
 
     
     <script type="text/javascript">
+	Vue.component('suggest',
+        	httpVueLoader('./suggest.vue'));
+
         Vue.mixin({
             data: function () {
                 return {
@@ -118,9 +121,6 @@
 
     Vue.component('apppreloader',
         httpVueLoader('../../components/apppreloader.vue'));
-
-    Vue.component('suggest',
-        httpVueLoader('./suggest.vue'));
 
     Vue.mixin({
         methods: {
