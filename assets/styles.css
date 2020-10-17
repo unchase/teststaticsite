@@ -1,0 +1,30 @@
+﻿.main-app .page-title {
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.main-app .page-title h1
+{
+    margin: 0;
+}
+
+.main-app nav .nav-wrapper .brand-logo
+{
+    margin-left: 10px;
+}
+
+.main-app .page-template-contact,
+.main-app .page-template-not-found
+{
+    min-height: 500px;
+}
+
+.main-app .page-template-home .hero .hero-content
+{
+    padding: 120px 0;
+}
+
+.main-app .page-template-home .hero .hero-content h1
+{
+    margin: 0;
+}
