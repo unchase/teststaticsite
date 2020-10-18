@@ -5,6 +5,13 @@
 				<div class="md-title">предложить {{ title }}</div>
 			</md-card-header>
 			<md-card-content>
+				<div class="md-layout md-gutter" v-for="(field, idx) in fields"
+							  :key="field.name"
+							  :label="field.name"
+							  :label-for="field.name"
+							  :description="field.description">
+					<md-input :id="field.name" :name="field.name" type="text" v-model="values[idx]"></md-input>
+				</div>
 				<!--<div class="md-layout md-gutter">
 					<div class="md-layout-item md-small-size-100">
 					<md-field :class="getValidationClass('firstName')">
