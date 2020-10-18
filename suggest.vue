@@ -127,7 +127,7 @@
 							if(field.multiple) {
 								value = [];
 							} else {
-								value null;
+								value = null;
 							}
 						}
 					}
