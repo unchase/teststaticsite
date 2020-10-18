@@ -9,7 +9,10 @@
 					<div class="md-layout-item md-small-size-100">
 						<md-field v-for="(field, idx) in fields" :key="field.name">
 							<label for="field.name">{{ field.label }}</label>
-							<md-input :id="field.name" :name="field.name" type="text" v-model="form.values[idx]" :required="field.required"></md-input>
+							<md-chips v-if="field.tags" :id="field.name" :name="field.name" v-model="form.values[idx]" class="md-primary" :md-auto-insert="true">
+								<label>{{ field.label }}</label>
+							</md-chips>
+							<md-input v-else :id="field.name" :name="field.name" type="text" v-model="form.values[idx]" :required="field.required"></md-input>
 							<span class="md-helper-text">{{ field.description }}</span>
 						</md-field>
 					</div>
