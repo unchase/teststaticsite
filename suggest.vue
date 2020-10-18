@@ -2,7 +2,7 @@
 	<form novalidate class="md-layout" @submit.prevent="validateUser" @reset.prevent="clearForm">
 		<md-card class="md-layout-item md-size-50 md-small-size-100">
 			<md-card-header>
-				<div class="md-title">Новый {{ title }}</div>
+				<div class="md-title">предложить {{ title }}</div>
 			</md-card-header>
 			<md-card-content>
 				<div class="md-layout md-gutter">
@@ -65,27 +65,21 @@
 		],
 		data: function() {
 			return {
-				values: [],
-				form: {
-					firstName: 'Иван',
-					lastName: 'Иванов',
-					description: 'Обычный человек',
-					tags: []
-				}
+				values: []
 			}
 		},
-		validations: {
-			form: {
-				firstName: {
-				  required,
-				  minLength: minLength(3)
-				},
-				lastName: {
-				  required,
-				  minLength: minLength(3)
-				}
-			}
-		},
+		//validations: {
+		//	form: {
+		//		firstName: {
+		//		  required,
+		//		  minLength: minLength(3)
+		//		},
+		//		lastName: {
+		//		  required,
+		//		  minLength: minLength(3)
+		//		}
+		//	}
+		//},
 		methods: {
 			createPullRequest() {
 				var self = this;
