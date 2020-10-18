@@ -55,7 +55,7 @@
 </template>
 
 <script>
-	export default {
+	module.exports = {
 		name: 'appform',
 		mixins: [validationMixin],
 		data: () => ({
