@@ -2,16 +2,23 @@
 	<form novalidate class="md-layout" @submit.prevent="validateUser" @reset.prevent="clearForm">
 		<md-card class="md-layout-item md-size-50 md-small-size-100">
 			<md-card-header>
-				<div class="md-title">предложить {{ title }}</div>
+				<div class="md-title">Предложить {{ title }}</div>
 			</md-card-header>
 			<md-card-content>
-				<div class="md-layout md-gutter" v-for="(field, idx) in fields"
-							  :key="field.name"
-							  :label="field.name"
-							  :label-for="field.name"
-							  :description="field.description">
-					<md-input :id="field.name" :name="field.name" type="text" v-model="values[idx]"></md-input>
+				<div class="md-layout md-gutter">
+					<div class="md-layout-item md-small-size-100">
+						<md-field v-for="(field, idx) in fields" :key="field.name">
+							<label for="field.name">{{ field.label }}</label>
+							<md-input :id="field.name" :name="field.name" type="text" v-model="form.values[idx]" :required="field.required"></md-input>
+							<span class="md-helper-text">{{ field.description }}</span>
+						</md-field>
+					</div>
 				</div>
+				
+				
+				
+				
+				
 				<!--<div class="md-layout md-gutter">
 					<div class="md-layout-item md-small-size-100">
 					<md-field :class="getValidationClass('firstName')">
@@ -72,7 +79,9 @@
 		],
 		data: function() {
 			return {
-				values: []
+				form: {
+					values: []
+				}
 			}
 		},
 		//validations: {
@@ -91,21 +100,24 @@
 			createPullRequest() {
 				var self = this;
 				var content = "";
-				this.fields.forEach(function(field, index) {
-					if(self.values[index]) {
-						var value = self.values[index].trim();
-						if(value && value.length > 0) {
-							if(field.multiple) {
-								content = content + field.name + ":\n";
-								value.split(",").forEach(function(part) {
-									content = content + "  - " + part.trim() + "\n";
-								});
-							} else {
-								content = content + field.name + ": " + value + "\n";
+				if (this.fields.length > 0)
+				{
+					this.fields.forEach(function(field, index) {
+						if(self.form && self.form.values[index]) {
+							var value = self.form.values[index].trim();
+							if(value && value.length > 0) {
+								if(field.multiple) {
+									content = content + field.name + ":\n";
+									value.split(",").forEach(function(part) {
+										content = content + "  - " + part.trim() + "\n";
+									});
+								} else {
+									content = content + field.name + ": " + value + "\n";
+								}
 							}
 						}
-					}
-				});
+					});
+				}
 				if(content.length > 0) {
 					content = encodeURIComponent(content);
 					window.location.href = self.url + "?value=" + content;
@@ -126,26 +138,29 @@
 				}
 			},
 			clearForm () {
-				this.$v.$reset();
-				this.fields.forEach(function(field, index) {
-					if(self.values[index]) {
-						var value = self.values[index].trim();
-						if(value && value.length > 0) {
-							if(field.multiple) {
-								value = [];
-							} else {
-								value = null;
+				//this.$v.$reset();
+				if (this.fields.length > 0)
+				{
+					this.fields.forEach(function(field, index) {
+						if(self.form && self.form.values[index]) {
+							var value = self.form.values[index].trim();
+							if(value && value.length > 0) {
+								if(field.multiple) {
+									value = [];
+								} else {
+									value = null;
+								}
 							}
 						}
-					}
-				});
+					});
+				}
 			},
 			validateUser () {
-				this.$v.$touch()
+				//this.$v.$touch()
 
-				if (!this.$v.$invalid) {
+				//if (!this.$v.$invalid) {
 				  this.createPullRequest()
-				}
+				//}
 			}
 		}
 	}

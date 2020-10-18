@@ -55,31 +55,43 @@
 					fields: [
 						{
 							name: "Feed",
+							label: "Feed",
 							description: "<strong>Обязательный.</strong> A URL to the feed for the blog (the format will be auto-detected).",
 							required: true
 						},
 						{
+							name: "Tags",
+							label: "Тэги",
+							description: "Список тэгов."
+						},
+						{
 							name: "Title",
+							label: "Заголовок",
 							description: "Заголовок (название) блога. If a feed was provided and this is omitted, the title will be taken from the feed."
 						},
 						{
 							name: "Website",
+							label: "Веб-сайт",
 							description: "URL блога. If a feed was provided and this is omitted, the website will be taken from the feed."
 						},
 						{
 							name: "Image",
+							label: "Изображение",
 							description: "A URL to an image or logo of the blog. This should be a secure <code>https</code> link."
 						},
 						{
 							name: "Description",
+							label: "Описание",
 							description: "Краткое описание блога. If a feed was provided and this is omitted, the description will be taken from the feed."
 						},
 						{
 							name: "Author",
+							label: "Автор",
 							description: "Автор блога. If a feed was provided and this is omitted, the author will be taken from the feed."
 						},
 						{
 							name: "Language",
+							label: "Язык",
 							description: "Язык, на котором написан блог. English will be assumed if no language is specified."
 						}
 					]
