@@ -52,7 +52,7 @@
 			</md-card-actions>
 		</md-card>
 	</form>
-<template>
+</template>
 
 <script>
 	export default {
