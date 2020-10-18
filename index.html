@@ -26,7 +26,7 @@
 				<md-tab id="tab-home" md-label="Домашняя" to="/">
 					<router-view></router-view>
 				</md-tab>
-				<md-tab id="tab-form" md-label="Форма" to="/form">
+				<md-tab id="tab-suggest" md-label="Форма" to="/suggest">
 					<router-view></router-view>
 				</md-tab>
 			</md-tabs>
@@ -50,7 +50,7 @@
 		};
 		
 		// home page component
-		const FormComponent = {
+		const SuggestComponent = {
 			template: `
 				<suggest title="Блог" url="https://github.com/unchase/awesome-russian-it/new/master/data/blogs" fields="[{name:'firstName'}]"></suggest>
 			`
@@ -61,7 +61,7 @@
 		*************/
 		const routes = [
 			{ path: "/", component: HomeComponent },
-			{ path: "/form", component: FormComponent }
+			{ path: "/suggest", component: SuggestComponent }
 		];
 		const router = new VueRouter({
 			routes
