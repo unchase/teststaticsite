@@ -65,7 +65,13 @@
 		],
 		data: function() {
 			return {
-				values: []
+				values: [],
+				form: {
+					firstName: 'Иван',
+					lastName: 'Иванов',
+					description: 'Обычный человек',
+					tags: []
+				}
 			}
 		},
 		validations: {
