@@ -5,7 +5,7 @@
 				<div class="md-title">предложить {{ title }}</div>
 			</md-card-header>
 			<md-card-content>
-				<div class="md-layout md-gutter">
+				<!--<div class="md-layout md-gutter">
 					<div class="md-layout-item md-small-size-100">
 					<md-field :class="getValidationClass('firstName')">
 						<label for="first-name">Имя</label>
@@ -43,7 +43,7 @@
 							</md-chips>
 						</md-field>
 					</div>
-				</div>
+				</div>-->
 			</md-card-content>
 
 			<md-card-actions>
