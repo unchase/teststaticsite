@@ -132,10 +132,6 @@
 						}
 					}
 				});
-				this.form.firstName = null
-				this.form.lastName = null
-				this.form.description = null
-				this.form.tags = []
 			},
 			validateUser () {
 				this.$v.$touch()
