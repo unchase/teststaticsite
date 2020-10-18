@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>Awesome Russian It</title>
-    <meta name="description" content="Awesome .NET open source &amp; community resources">
+    <meta name="description" content="Ресурсы Awesome Russian IT">
     <meta property="og:title" content="Awesome Russian It">
-    <meta property="og:description" content="Awesome .NET open source &amp; community resources">
+    <meta property="og:description" content="Ресурсы Awesome Russian IT">
     <meta property="og:image" content="https://awesomeit.ru/assets/logo.png">
     <meta property="og:url" content="/">
     <meta name="twitter:title" content="Awesome Russian It">
-    <meta name="twitter:description" content="Awesome .NET open source &amp; community resources">
+    <meta name="twitter:description" content="Ресурсы Awesome Russian IT">
     <meta name="twitter:image" content="https://awesomeit.ru/assets/logo.png">
     <meta name="twitter:card" content="summary_large_image">
 
@@ -27,9 +27,9 @@
     <link href="/assets/styles.css" rel="stylesheet">
 
     <!-- версия для разработки, отображает полезные предупреждения в консоли -->
-    <script src="/mirror/cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="/mirror/cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script src="/mirror/cdnjs.cloudflare.com/ajax/libs/vue-router/3.0.1/vue-router.js"></script>
-    <script src="/mirror/cdn.jsdelivr.net/npm/http-vue-loader@1.3.5"></script>
+    <script src="/mirror/cdn.jsdelivr.net/npm/http-vue-loader@1.4.2/src/httpVueLoader.min.js"></script>
     <script src="/mirror/unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
     <script src="/mirror/cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
     <script src="/mirror/cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.min.js"></script>
@@ -46,6 +46,7 @@
     <div id="app" class="main-app">
         <appmenu></appmenu>
         <div class="main-content">
+            <router-view></router-view>
             
         </div>
         <appfooter description="Описание программы."></appfooter>
@@ -73,6 +74,9 @@
 
     Vue.component('apppreloader',
         httpVueLoader('../components/apppreloader.vue'));
+
+    Vue.component('suggest',
+        httpVueLoader('./suggest/suggest.vue'));
 
     Vue.mixin({
         methods: {
