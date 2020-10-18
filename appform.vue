@@ -7,7 +7,7 @@
 			<md-card-content>
 				<div class="md-layout md-gutter">
 					<div class="md-layout-item md-small-size-100">
-					<md-field>
+					<md-field :class="getValidationClass('firstName')">
 						<label for="first-name">Имя</label>
 						<md-input v-model="form.firstName" name="first-name" id="first-name" required />
 						<span class="md-helper-text">Помощь</span>
@@ -17,7 +17,7 @@
 					</div>
 
 					<div class="md-layout-item md-small-size-100">
-						<md-field>
+						<md-field :class="getValidationClass('lastName')">
 							<span class="md-prefix">$</span>
 							<label for="last-name">Фамилия</label>
 							<md-input v-model="form.lastName" name="last-name" id="last-name" />
@@ -53,3 +53,64 @@
 		</md-card>
 	</form>
 <template>
+
+<script>
+	export default {
+		name: 'appform',
+		mixins: [validationMixin],
+		data: () => ({
+			form: {
+				firstName: 'Иван',
+				lastName: 'Иванов',
+				description: 'Обычный человек',
+				tags: []
+			}
+		}),
+		validations: {
+			form: {
+				firstName: {
+				  required,
+				  minLength: minLength(3)
+				},
+				lastName: {
+				  required,
+				  minLength: minLength(3)
+				}
+			}
+		},
+		methods: {
+			getValidationClass (fieldName) {
+				const field = this.$v.form[fieldName]
+
+				if (field) {
+					return {
+						'md-invalid': field.$invalid && field.$dirty
+					}
+				}
+			},
+			clearForm () {
+				this.$v.$reset()
+				this.form.firstName = null
+				this.form.lastName = null
+				this.form.description = null
+				this.form.tags = []
+			},
+			saveUser () {
+				window.location.href = 'https://github.com/unchase/awesome-russian-it/new/master/data/blogs'
+			
+				// Instead of this timeout, here you can call your API
+				window.setTimeout(() => {
+				  this.clearForm()
+				}, 1500)
+			},
+			validateUser () {
+				this.$v.$touch()
+
+				if (!this.$v.$invalid) {
+				  this.saveUser()
+
+				}
+			}
+		}
+	}
+</script>
