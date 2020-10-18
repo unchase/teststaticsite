@@ -1,255 +1,72 @@
-﻿<!DOCTYPE html><html lang="ru"><head>
-
+<!doctype html>
+<html>
+  <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta content="width=device-width,initial-scale=1,minimal-ui" name="viewport">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Material+Icons">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vue-material@1.0.0-beta-15/dist/vue-material.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vue-material@1.0.0-beta-15/dist/theme/default.css">
+	
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.0.1/vue-router.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/http-vue-loader@1.4.2/src/httpVueLoader.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-material@1.0.0-beta-15/dist/vue-material.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vuelidate@0.7.5/dist/vuelidate.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vuelidate@0.7.5/dist/validators.min.js"></script>
+  </head>
 
-    <title>Awesome Russian It</title>
-    <meta name="description" content="Ресурсы Awesome Russian IT">
-    <meta property="og:title" content="Awesome Russian It">
-    <meta property="og:description" content="Ресурсы Awesome Russian IT">
-    <meta property="og:image" content="https://awesomeit.ru/assets/logo.png">
-    <meta property="og:url" content="/">
-    <meta name="twitter:title" content="Awesome Russian It">
-    <meta name="twitter:description" content="Ресурсы Awesome Russian IT">
-    <meta name="twitter:image" content="https://awesomeit.ru/assets/logo.png">
-    <meta name="twitter:card" content="summary_large_image">
+  <body>
+	<script>
+		Vue.component('appform', httpVueLoader('appform.vue'));
+	</script>
 
-
-    <link href="/mirror/cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" rel="stylesheet" type="text/css">
-    <link href="/mirror/fonts.googleapis.com/css" rel="stylesheet" type="text/css">
-    <link href="/mirror/fonts.googleapis.com/icon" rel="stylesheet">
-    <link href="/mirror/cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.12.0/build/styles/default.min.css" rel="stylesheet">
-    <link href="/mirror/use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do|Roboto+Mono:400,700|Roboto+Slab:100,700|Roboto:300,400,700" rel="stylesheet" data-no-mirror="">
-    <link type="text/css" rel="stylesheet" href="/mirror/unpkg.com/bootstrap/dist/css/bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="/mirror/unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css">
-    <link href="/assets/styles.css" rel="stylesheet">
-
-    <!-- версия для разработки, отображает полезные предупреждения в консоли -->
-    <script src="/mirror/cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
-    <script src="/mirror/cdnjs.cloudflare.com/ajax/libs/vue-router/3.0.1/vue-router.js"></script>
-    <script src="/mirror/cdn.jsdelivr.net/npm/http-vue-loader@1.4.2/src/httpVueLoader.min.js"></script>
-    <script src="/mirror/unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
-    <script src="/mirror/cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
-    <script src="/mirror/cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.min.js"></script>
-    <script src="/mirror/cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/js/materialize.js"></script>
-    <script src="/mirror/cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.12.0/build/highlight.min.js"></script>
-
-    
-
-    <script>
-        hljs.initHighlightingOnLoad();
-    </script>
-</head>
-<body>
-    <div id="app" class="main-app">
-        <appmenu></appmenu>
-        <div class="main-content">
-            <router-view></router-view>
-            
-        </div>
-        <appfooter description="Описание программы."></appfooter>
+    <div id="app">
+		<div>
+			<md-tabs md-sync-route class="md-accent" md-alignment="right">
+				<md-tab id="tab-home" md-label="Домашняя" to="/">
+					<router-view></router-view>
+				</md-tab>
+				<md-tab id="tab-form" md-label="Форма" to="/form">
+					<router-view></router-view>
+				</md-tab>
+			</md-tabs>
+		</div>
     </div>
 
-    
+    <script>
+        Vue.use(VueMaterial.default);
 
-<script type="text/javascript">
-    Vue.config.debug = true;
-    Vue.config.devtools = true;
+		// home page component
+		const HomeComponent = {
+			template: `
+				<div>Home</div>
+			`
+		};
+		
+		// home page component
+		const FormComponent = {
+			template: `
+				<appform></appform>
+			`
+		};
+		
+		/*************
+		** Routing **
+		*************/
+		const routes = [
+			{ path: "/", component: HomeComponent },
+			{ path: "/form", component: FormComponent }
+		];
+		const router = new VueRouter({
+			routes
+		});
 
-    // Регистрируем vue-компоненты
-
-    Vue.component('appcards',
-        httpVueLoader('../components/appcards.vue'));
-
-    Vue.component('appfooter',
-        httpVueLoader('../components/appfooter.vue'));
-
-    Vue.component('apploading',
-        httpVueLoader('../components/apploading.vue'));
-
-    Vue.component('appmenu',
-        httpVueLoader('../components/appmenu.vue'));
-
-    Vue.component('apppreloader',
-        httpVueLoader('../components/apppreloader.vue'));
-
-    Vue.component('home',
-        httpVueLoader('../components/home.vue'));
-
-    Vue.component('suggest',
-        httpVueLoader('./suggest/suggest.vue'));
-
-    Vue.mixin({
-        methods: {
-            getCard: function(cardData) {
-                var link = String(cardData.link);
-                if(link) {
-                    if(link.startsWith('/podcasts')) {
-                        return 'podcast-card';
-                    }
-                    if(link.startsWith('/blogs')) {
-                        return 'blog-card';
-                    }
-                    if(link.startsWith('/channels')) {
-                        return 'channel-card';
-                    }
-                }
-                var cardType = cardData.cardType;
-                if(cardType) {
-                    if(cardType === "Resource") {
-                        return 'resource-card';
-                    }
-                }
-                return 'card';
-            }
-        }
-    });
-
-    /*********
-	* components
-	*********/
-
-    // home page component
-    const HomeComponent = {
-        template: `
-            <home></home>
-        `
-    };
-
-    // about page component
-    const AboutComponent = {
-        template: `
-            <div class="page-template page-template-about">
-                <div class="page-title">
-                    <div class="container">
-                        <h1>О нас</h1>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col s8">
-                            <div class="section">
-                                <h2>Section</h2>
-                                <p><router-link to="https://www.linkedin.com/in/carllomerabia">https://www.linkedin.com/in/carllomerabia</router-link></p>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos iste quos adipisci ipsa officia molestias! Quibusdam, temporibus odio, quos aliquam quia aliquid consequuntur officia nesciunt vel obcaecati voluptatem assumenda. Reprehenderit.</p>
-                            </div>
-                            <div class="divider"></div>
-                            <div class="section">
-                                <h2>Section</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos iste quos adipisci ipsa officia molestias! Quibusdam, temporibus odio, quos aliquam quia aliquid consequuntur officia nesciunt vel obcaecati voluptatem assumenda. Reprehenderit.</p>
-                            </div>
-                            <div class="divider"></div>
-                            <div class="section">
-                                <h2>Section</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos iste quos adipisci ipsa officia molestias! Quibusdam, temporibus odio, quos aliquam quia aliquid consequuntur officia nesciunt vel obcaecati voluptatem assumenda. Reprehenderit.</p>
-                            </div>
-                            <div class="divider"></div>
-                            <div class="section">
-                                <h2>Section</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos iste quos adipisci ipsa officia molestias! Quibusdam, temporibus odio, quos aliquam quia aliquid consequuntur officia nesciunt vel obcaecati voluptatem assumenda. Reprehenderit.</p>
-                            </div>
-                        </div>
-                        <div class="col s4">
-                            <h3>Sidebar</h3>
-                            <div class="collection">
-                                <a href="#!" class="collection-item">Section Link</a>
-                                <a href="#!" class="collection-item active">Section Link</a>
-                                <a href="#!" class="collection-item">Section Link</a>
-                                <a href="#!" class="collection-item">Section Link</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `
-    };
-
-    // contacts page component
-    const ContactsComponent = {
-        data() {
-            return {
-                isLoading: false,
-                api: {
-                    url: "https://randomuser.me/api/",
-                    results: 100,
-                    nat: "us,dk,fr,gb"
-                },
-                contacts: [],
-                errors: []
-            };
-        },
-        methods: {
-            fetchContacts: function () {
-                this.isLoading = true;
-                axios
-                    .get(this.api.url, {
-                        params: {
-                            results: this.api.results,
-                            nat: this.api.nat
-                        }
-                    })
-                    .then(response => {
-                        this.contacts = response.data;
-                        this.isLoading = false;
-                    })
-                    .catch(error => {
-                        this.errors = error;
-                        this.isLoading = false;
-                    });
-            }
-        },
-        mounted: function () {
-            this.fetchContacts();
-        },
-        template: `
-            <div class="page-template page-template-contact container">
-                <h1>Contacts</h1>
-                <apppreloader v-if="isLoading" />
-                <div v-if="_.isEmpty(contacts) === false">
-                    <appcards :contactlist="contacts" />
-                </div>
-            </div>
-        `
-    };
-
-    // 404 page component
-    const PageNotFound = {
-        template: `
-            <div class="page-template page-template-not-found">
-                <div class="page-title">
-                    <div class="container">
-                    <h1>Error 404</h1>
-                    </div>
-                </div>
-                <div class="container">
-                    <h2>Page Not Found :(</h2>
-                </div>
-            </div>
-        `
-    };
-
-    /*************
-    ** Routing **
-    *************/
-    const routes = [
-        { path: "/", component: HomeComponent },
-        { path: "/about", component: AboutComponent },
-        { path: "/contacts", component: ContactsComponent },
-        { path: "*", component: PageNotFound }
-    ];
-    const router = new VueRouter({
-        routes
-    });
-
-    /**********************
-    ** Main application **
-    **********************/
-    const app = new Vue({
-        el: "#app",
-        router
-    });
-</script>
-
-</body></html>
+		const app = new Vue({
+			el: '#app',
+			router
+		})
+    </script>
+  </body>
+  
+  
+</html>
