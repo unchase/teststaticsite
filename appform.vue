@@ -7,7 +7,7 @@
 			<md-card-content>
 				<div class="md-layout md-gutter">
 					<div class="md-layout-item md-small-size-100">
-					<md-field :class="getValidationClass('firstName')">
+					<md-field>
 						<label for="first-name">Имя</label>
 						<md-input v-model="form.firstName" name="first-name" id="first-name" required />
 						<span class="md-helper-text">Помощь</span>
@@ -17,7 +17,7 @@
 					</div>
 
 					<div class="md-layout-item md-small-size-100">
-						<md-field :class="getValidationClass('lastName')">
+						<md-field>
 							<span class="md-prefix">$</span>
 							<label for="last-name">Фамилия</label>
 							<md-input v-model="form.lastName" name="last-name" id="last-name" />
