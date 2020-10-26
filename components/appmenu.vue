@@ -4,11 +4,15 @@
                flat
                max-height="120">
         <!--<v-icon
-            large
-            color="green darken-2"
-        >
-            mdi-domain
-        </v-icon>-->
+        large
+        color="green darken-2"
+    >
+        mdi-domain
+    </v-icon>-->
+
+        <v-icon left>
+            mdi-pencil
+        </v-icon>
 
         <v-toolbar-title class="headline">{{ title }}</v-toolbar-title>
 
