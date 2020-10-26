@@ -48,13 +48,13 @@
 <body>
     <div id="app" class="main-app">
         <v-app>
-            <appmenu title="Test"></appmenu>
-            <!--<div class="main-content">
-            <router-view></router-view>-->
-                <suggest title="Блог" :fields="fields" url="https://github.com/unchase/awesome-russian-it/new/master/data/blogs"></suggest>
+            <appmenu title="Awesome Russian IT"></appmenu>
+            <!--<router-view></router-view>-->
+                <v-main class="main-content">
+                    <suggest title="Блог" :fields="fields" url="https://github.com/unchase/awesome-russian-it/new/master/data/blogs"></suggest>
 
 
-                <!--</div>-->
+                </v-main>
             <appfooter description="Описание программы."></appfooter>
         </v-app>
     </div>
