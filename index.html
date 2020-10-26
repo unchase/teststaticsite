@@ -21,7 +21,6 @@
 
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
     <link href="/assets/styles.css" rel="stylesheet" />
 
@@ -48,12 +47,14 @@
 </head>
 <body>
     <div id="app" class="main-app">
-        <appmenu title="Test"></appmenu>
-        <!--<div class="main-content">
+        <v-app>
+            <appmenu title="Test"></appmenu>
+            <!--<div class="main-content">
             <router-view></router-view>-->
-            
-        <!--</div>-->
-        <appfooter description="Описание программы."></appfooter>
+                
+                <!--</div>-->
+            <appfooter description="Описание программы."></appfooter>
+        </v-app>
     </div>
 
     

@@ -46,11 +46,11 @@
 
         <template v-slot:extension>
             <v-tabs centered>
-                <v-tab href="./events">События</v-tab>
-                <v-tab href="./podcasts">Подкасты</v-tab>
-                <v-tab href="./youtube-channels">YouTube-каналы</v-tab>
-                <v-tab href="./telegram-cjannels">Telegram-каналы</v-tab>
-                <v-tab href="./blogs">Блоги</v-tab>
+                <v-tab href="/events">События</v-tab>
+                <v-tab href="/podcasts">Подкасты</v-tab>
+                <v-tab href="/youtube-channels">YouTube-каналы</v-tab>
+                <v-tab href="/telegram-cjannels">Telegram-каналы</v-tab>
+                <v-tab href="/blogs">Блоги</v-tab>
             </v-tabs>
         </template>
     </v-toolbar>

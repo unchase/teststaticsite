@@ -47,14 +47,16 @@
 </head>
 <body>
     <div id="app" class="main-app">
-        <appmenu title="Test"></appmenu>
-        <!--<div class="main-content">
+        <v-app>
+            <appmenu title="Test"></appmenu>
+            <!--<div class="main-content">
             <router-view></router-view>-->
-            <suggest title="Блог" :fields="fields" url="https://github.com/unchase/awesome-russian-it/new/master/data/blogs"></suggest>
+                <suggest title="Блог" :fields="fields" url="https://github.com/unchase/awesome-russian-it/new/master/data/blogs"></suggest>
 
 
-        <!--</div>-->
-        <appfooter description="Описание программы."></appfooter>
+                <!--</div>-->
+            <appfooter description="Описание программы."></appfooter>
+        </v-app>
     </div>
 
     
