@@ -1,73 +1,37 @@
 <template>
-	<form novalidate class="md-layout" @submit.prevent="validateUser" @reset.prevent="clearForm">
+	<form novalidate class="md-layout md-alignment-center" @submit.prevent="validateUser" @reset.prevent="clearForm">
 		<md-card class="md-layout-item md-size-50 md-small-size-100">
 			<md-card-header>
 				<div class="md-title">Предложить {{ title }}</div>
 			</md-card-header>
 			<md-card-content>
-				<div class="md-layout md-gutter">
+				<p>
+					Вы можете предложить новый {{ title.toLowerCase() }}, заполнив следующую форму 
+					с указанными ниже полями, каждое из которых является необязательным, если не указано иное. 
+					Или <a :href="url">создав pull request в проекте awesome-russian-it вручную</a>,
+					содержащий новый файл с расширением <code>.yml</code>, который содержит необходимые поля.
+				</p>
+				<md-divider></md-divider>
+				<div class="md-layout md-gutter md-alignment-center">
 					<div class="md-layout-item md-small-size-100">
 						<md-field v-for="(field, idx) in fields" :key="field.name">
 							<label for="field.name">{{ field.label }}</label>
-							<md-chips v-if="field.tags" :id="field.name" :name="field.name" v-model="form.values[idx]" class="md-primary" :md-auto-insert="true">
-								<label>{{ field.label }}</label>
-							</md-chips>
-							<md-input v-else :id="field.name" :name="field.name" type="text" v-model="form.values[idx]" :required="field.required"></md-input>
+							<md-input :id="field.name" :name="field.name" type="text" v-model="form.values[idx]" :required="field.required"></md-input>
 							<span class="md-helper-text">{{ field.description }}</span>
 						</md-field>
 					</div>
 				</div>
-				
-				
-				
-				
-				
-				<!--<div class="md-layout md-gutter">
-					<div class="md-layout-item md-small-size-100">
-					<md-field :class="getValidationClass('firstName')">
-						<label for="first-name">Имя</label>
-						<md-input v-model="form.firstName" name="first-name" id="first-name" required />
-						<span class="md-helper-text">Помощь</span>
-						<span class="md-error" v-if="!$v.form.firstName.required">The first name is required</span>
-						<span class="md-error" v-else-if="!$v.form.firstName.minlength">Invalid first name</span>
-					</md-field>
-					</div>
-
-					<div class="md-layout-item md-small-size-100">
-						<md-field :class="getValidationClass('lastName')">
-							<span class="md-prefix">$</span>
-							<label for="last-name">Фамилия</label>
-							<md-input v-model="form.lastName" name="last-name" id="last-name" />
-							<span class="md-error" v-if="!$v.form.lastName.required">Фамилия должна быть задана.</span>
-							<span class="md-error" v-else-if="!$v.form.lastName.minlength">Неверная фамилия</span>
-						</md-field>
-					</div>
-				</div>
-				<div class="md-layout md-gutter">
-					<div class="md-layout-item md-small-size-100">
-						<md-field>
-							<label for="first-name">Описание</label>
-							<md-textarea v-model="form.description" name="description" id="description" />
-							<md-icon>description</md-icon>
-						</md-field>
-					</div>
-				</div>
-				<div class="md-layout md-gutter">
-					<div class="md-layout-item md-small-size-100">
-						<md-field>
-							<md-chips v-model="form.tags" name="tags" id="tags" class="md-primary" md-placeholder="Добавить тэг..." :md-auto-insert="true">
-								<label>Тэги</label>
-							</md-chips>
-						</md-field>
-					</div>
-				</div>-->
 			</md-card-content>
-
 			<md-card-actions>
 				<md-button class="md-raised" type="reset">СБРОСИТЬ</md-button>
 				<md-button class="md-primary" type="submit">СОЗДАТЬ</md-button>
 			</md-card-actions>
 		</md-card>
+		
+		<md-snackbar md-position="center" :md-duration="duration" :md-active.sync="showClearSnackbar" md-persistent>
+			<span>Значения полей были сброшены.</span>
+			<md-button class="md-primary" @click="showClearSnackbar = false">ОК</md-button>
+		</md-snackbar>
 	</form>
 </template>
 
@@ -82,6 +46,8 @@
 		],
 		data: function() {
 			return {
+				duration: 2000,
+				showClearSnackbar: false,
 				form: {
 					values: []
 				}
@@ -100,6 +66,10 @@
 		//	}
 		//},
 		methods: {
+			mounted: function(){
+				console.log('mounted()');
+				alert('mounted()');
+			},
 			createPullRequest() {
 				var self = this;
 				var content = "";
@@ -156,6 +126,7 @@
 							}
 						}
 					});
+					showClearSnackbar = true;
 				}
 			},
 			validateUser () {

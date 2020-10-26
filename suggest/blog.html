@@ -1,40 +1,43 @@
-﻿<!DOCTYPE html><html lang="ru"><head>
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
 
-    <title>Awesome Russian It - Предложить Блог</title>
-    <meta name="description" content="Ресурсы Awesome Russian IT">
-    <meta property="og:title" content="Awesome Russian It - Предложить Блог">
-    <meta property="og:description" content="Ресурсы Awesome Russian IT">
+    <title>Awesome Russian It - &#x41F;&#x440;&#x435;&#x434;&#x43B;&#x43E;&#x436;&#x438;&#x442;&#x44C; &#x411;&#x43B;&#x43E;&#x433;</title>
+    <meta name="description" content="&#x420;&#x435;&#x441;&#x443;&#x440;&#x441;&#x44B; Awesome Russian IT">
+    <meta property="og:title" content="Awesome Russian It - &#x41F;&#x440;&#x435;&#x434;&#x43B;&#x43E;&#x436;&#x438;&#x442;&#x44C; &#x411;&#x43B;&#x43E;&#x433;">
+    <meta property="og:description" content="&#x420;&#x435;&#x441;&#x443;&#x440;&#x441;&#x44B; Awesome Russian IT">
     <meta property="og:image" content="https://awesomeit.ru/assets/logo.png">
     <meta property="og:url" content="/suggest/blog">
-    <meta name="twitter:title" content="Awesome Russian It - Предложить Блог">
-    <meta name="twitter:description" content="Ресурсы Awesome Russian IT">
+    <meta name="twitter:title" content="Awesome Russian It - &#x41F;&#x440;&#x435;&#x434;&#x43B;&#x43E;&#x436;&#x438;&#x442;&#x44C; &#x411;&#x43B;&#x43E;&#x433;">
+    <meta name="twitter:description" content="&#x420;&#x435;&#x441;&#x443;&#x440;&#x441;&#x44B; Awesome Russian IT">
     <meta name="twitter:image" content="https://awesomeit.ru/assets/logo.png">
     <meta name="twitter:card" content="summary_large_image">
 
 
-    <link href="/mirror/cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" rel="stylesheet" type="text/css">
-    <link href="/mirror/fonts.googleapis.com/css" rel="stylesheet" type="text/css">
-    <link href="/mirror/fonts.googleapis.com/icon" rel="stylesheet">
-    <link href="/mirror/cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.12.0/build/styles/default.min.css" rel="stylesheet">
-    <link href="/mirror/use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do|Roboto+Mono:400,700|Roboto+Slab:100,700|Roboto:300,400,700" rel="stylesheet" data-no-mirror="">
-    <link type="text/css" rel="stylesheet" href="/mirror/unpkg.com/bootstrap/dist/css/bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="/mirror/unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css">
-    <link href="/assets/styles.css" rel="stylesheet">
 
-    <!-- версия для разработки, отображает полезные предупреждения в консоли -->
-    <script src="/mirror/cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
-    <script src="/mirror/cdnjs.cloudflare.com/ajax/libs/vue-router/3.0.1/vue-router.js"></script>
-    <script src="/mirror/cdn.jsdelivr.net/npm/http-vue-loader@1.4.2/src/httpVueLoader.min.js"></script>
-    <script src="/mirror/unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
-    <script src="/mirror/cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
-    <script src="/mirror/cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.min.js"></script>
-    <script src="/mirror/cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/js/materialize.js"></script>
-    <script src="/mirror/cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.12.0/build/highlight.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <link href="/assets/styles.css" rel="stylesheet" />
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="https://unpkg.com/vuex@3.5.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.0.1/vue-router.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/http-vue-loader@1.4.2/src/httpVueLoader.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuelidate@0.7.5/dist/vuelidate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuelidate@0.7.5/dist/validators.min.js"></script>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.12.0/build/highlight.min.js"></script>
 
     
 
@@ -44,13 +47,13 @@
 </head>
 <body>
     <div id="app" class="main-app">
-        <appmenu></appmenu>
-        <div class="main-content">
-            <router-view></router-view>
+        <appmenu title="Test"></appmenu>
+        <!--<div class="main-content">
+            <router-view></router-view>-->
             <suggest title="Блог" :fields="fields" url="https://github.com/unchase/awesome-russian-it/new/master/data/blogs"></suggest>
 
 
-        </div>
+        <!--</div>-->
         <appfooter description="Описание программы."></appfooter>
     </div>
 
@@ -99,6 +102,15 @@
 <script type="text/javascript">
     Vue.config.debug = true;
     Vue.config.devtools = true;
+
+    Vue.use(Vuex);
+    Vue.use(vuelidate.default);
+    var validationMixin = window.vuelidate.validationMixin;
+    var required = window.validators.required;
+    var minLength = window.validators.minLength;
+    var maxLength = window.validators.maxLength;
+    var email = window.validators.email;
+    //Vue.use(VueMaterial.default);
 
     // Регистрируем vue-компоненты
 
@@ -285,13 +297,27 @@
         routes
     });
 
+    // глобальное хранилище vuex
+    const store = new Vuex.Store({
+        state: {
+            count: 0
+        },
+        mutations: {
+            increment (state) {
+                state.count++
+            }
+        }
+    });
+
     /**********************
     ** Main application **
     **********************/
     const app = new Vue({
         el: "#app",
-        router
+        router,
+        store,
+        vuetify: new Vuetify()
     });
 </script>
-
-</body></html>
+</body>
+</html>
