@@ -49,7 +49,37 @@
 <body>
     <div id="app" class="main-app">
         <v-app>
-            <appmenu title="Awesome Russian IT"></appmenu>
+            <v-toolbar color="orange darken-2"
+               dark
+               flat
+               max-height="120">
+                <v-icon large left>
+                    mdi-monitor-star
+                </v-icon>
+
+                <v-toolbar-title class="headline">Test</v-toolbar-title>
+
+                <v-text-field append-icon="mdi-magnify"
+                            class="mx-4"
+                            flat
+                            hide-details
+                            label="Найти"
+                            solo-inverted>
+                </v-text-field>
+
+                <template v-slot:extension>
+                    <v-tabs centered v-model="active_tab">
+                        <v-tab v-for="tab of tabs" :key="tab.id" :href="tab.url">
+                            {{tab.name}}
+                        </v-tab>
+                        <!--<v-tab key="home" href="/">Домашняя</v-tab>
+                        <v-tab key="events" href="/events">События</v-tab>
+                        <v-tab key="podcasts" href="/podcasts">Подкасты</v-tab>
+                        <v-tab key="channels" href="/channels">Каналы</v-tab>
+                        <v-tab key="blogs" href="/blogs">Блоги</v-tab>-->
+                    </v-tabs>
+                </template>
+            </v-toolbar>
             <!--<router-view></router-view>-->
                 <v-main class="main-content">
                     
@@ -277,7 +307,17 @@
         el: "#app",
         router,
         store,
-        vuetify: new Vuetify()
+        vuetify: new Vuetify(),
+        data: () => ({
+            active_tab: 1,
+            tabs: [
+                { id: 1, name: 'Домашняя', url: '/' },
+                { id: 2, name: 'События', url: '/events' },
+                { id: 3, name: 'Подкасты', url: '/podcasts' },
+                { id: 4, name: 'Каналы', url: '/channels' },
+                { id: 5, name: 'Блоги', url: '/blogs' }
+            ]
+        })
     });
 </script>
 </body>
