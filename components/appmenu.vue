@@ -10,8 +10,8 @@
         mdi-domain
     </v-icon>-->
 
-        <v-icon left>
-            mdi-pencil
+        <v-icon large left>
+            mdi-monitor-star
         </v-icon>
 
         <v-toolbar-title class="headline">{{ title }}</v-toolbar-title>
@@ -29,8 +29,7 @@
                 <v-tab href="/">Домашняя</v-tab>
                 <v-tab href="/events">События</v-tab>
                 <v-tab href="/podcasts">Подкасты</v-tab>
-                <v-tab href="/youtube-channels">YouTube-каналы</v-tab>
-                <v-tab href="/telegram-cjannels">Telegram-каналы</v-tab>
+                <v-tab href="/channels">Каналы</v-tab>
                 <v-tab href="/blogs">Блоги</v-tab>
             </v-tabs>
         </template>

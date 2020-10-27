@@ -1,42 +1,44 @@
-﻿<!DOCTYPE html><html lang="ru"><head>
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
 
-    <title>Awesome Russian It - LinkMeUp</title>
-    <meta name="description" content="Это проект про сети, системное администрирование, инженерию и немного разработку, которым занимается группа энтузиастов, не нашедших лучшего применения своему свободному времени.">
-    <meta property="og:title" content="Awesome Russian It - LinkMeUp">
-    <meta property="og:description" content="Это проект про сети, системное администрирование, инженерию и немного разработку, которым занимается группа энтузиастов, не нашедших лучшего применения своему свободному времени.">
+    <title>Awesome Russian It - &#x411;&#x43B;&#x43E;&#x433;&#x438;</title>
+    <meta name="description" content="&#x420;&#x435;&#x441;&#x443;&#x440;&#x441;&#x44B; Awesome Russian IT">
+    <meta property="og:title" content="Awesome Russian It - &#x411;&#x43B;&#x43E;&#x433;&#x438;">
+    <meta property="og:description" content="&#x420;&#x435;&#x441;&#x443;&#x440;&#x441;&#x44B; Awesome Russian IT">
     <meta property="og:image" content="https://awesomeit.ru/assets/logo.png">
-    <meta property="og:url" content="/podcasts/linkmeup">
-    <meta name="twitter:title" content="Awesome Russian It - LinkMeUp">
-    <meta name="twitter:description" content="Это проект про сети, системное администрирование, инженерию и немного разработку, которым занимается группа энтузиастов, не нашедших лучшего применения своему свободному времени.">
+    <meta property="og:url" content="/blogs">
+    <meta name="twitter:title" content="Awesome Russian It - &#x411;&#x43B;&#x43E;&#x433;&#x438;">
+    <meta name="twitter:description" content="&#x420;&#x435;&#x441;&#x443;&#x440;&#x441;&#x44B; Awesome Russian IT">
     <meta name="twitter:image" content="https://awesomeit.ru/assets/logo.png">
     <meta name="twitter:card" content="summary_large_image">
 
 
 
 
-    <link href="/mirror/fonts.googleapis.com/css" rel="stylesheet">
-    <link href="/mirror/cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
-    <link href="/mirror/cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
-    <link href="/assets/styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <link href="/assets/styles.css" rel="stylesheet" />
 
-    <script src="/mirror/cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
-    <script src="/mirror/unpkg.com/vuex@3.5.1"></script>
-    <script src="/mirror/cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.js"></script>
-    <script src="/mirror/cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
-    <script src="/mirror/cdnjs.cloudflare.com/ajax/libs/vue-router/3.0.1/vue-router.js"></script>
-    <script src="/mirror/cdn.jsdelivr.net/npm/http-vue-loader@1.4.2/src/httpVueLoader.min.js"></script>
-    <script src="/mirror/cdn.jsdelivr.net/npm/vuelidate@0.7.5/dist/vuelidate.min.js"></script>
-    <script src="/mirror/cdn.jsdelivr.net/npm/vuelidate@0.7.5/dist/validators.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="https://unpkg.com/vuex@3.5.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.0.1/vue-router.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/http-vue-loader@1.4.2/src/httpVueLoader.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuelidate@0.7.5/dist/vuelidate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuelidate@0.7.5/dist/validators.min.js"></script>
 
 
 
-    <script src="/mirror/cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
-    <script src="/mirror/cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.min.js"></script>
-    <script src="/mirror/cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.12.0/build/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.12.0/build/highlight.min.js"></script>
 
     
 
@@ -51,21 +53,6 @@
             <!--<router-view></router-view>-->
                 <v-main class="main-content">
                     
-<h5 class="mb-2 accent-script text-secondary" style="line-height: 0">Подкасты</h5>
-<h1 class="mb-0 font-weight-bold display-4">
-    LinkMeUp
-</h1>
-<div class="mt-2">
-            <span class="mr-1"><a href="/podcasts/?filter-tags=API"><i class="fas fa-tag"></i> API</a></span>
-            <span class="mr-1"><a href="/podcasts/?filter-tags=Code Generation"><i class="fas fa-tag"></i> Code Generation</a></span>
-            <span class="mr-1"><a href="/podcasts/?filter-tags=Visual Studio"><i class="fas fa-tag"></i> Visual Studio</a></span>
-</div>
-<div class="mt-2 mb-4 small"><a href="https://github.com/unchase/awesome-russian-it/edit/master/data/projects/linkmeup.yml"><i class="fas fa-pencil-alt"></i> Редактировать данные подкаста</a></div>
-
-
-
-
-
                 </v-main>
             <appfooter description="Описание программы."></appfooter>
         </v-app>
@@ -293,5 +280,5 @@
         vuetify: new Vuetify()
     });
 </script>
-
-</body></html>
+</body>
+</html>

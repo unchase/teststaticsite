@@ -39,8 +39,8 @@
                 </v-btn>
                 <strong class="subheading">Оставайтесь на связи со мной в социальных сетях!</strong>
                 <v-spacer></v-spacer>
-                <v-btn icon>
-                    <v-icon size="24px" v-text=""></v-icon>
+                <v-btn dark icon href="https://medium.com/@unchase">
+                    <v-icon size="24px" v-text="mdi-windsock"></v-icon>
                 </v-btn>
                 <!--<v-btn
                     v-for="(icon, i) in socialIcons"
