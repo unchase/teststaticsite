@@ -25,12 +25,15 @@
         </v-text-field>
 
         <template v-slot:extension>
-            <v-tabs centered>
-                <v-tab href="/">Домашняя</v-tab>
-                <v-tab href="/events">События</v-tab>
-                <v-tab href="/podcasts">Подкасты</v-tab>
-                <v-tab href="/channels">Каналы</v-tab>
-                <v-tab href="/blogs">Блоги</v-tab>
+            <v-tabs centered v-model="active_tab">
+                <v-tab v-for="tab of tabs" :key="tab.id" :href="tab.url">
+                    {{tab.name}}
+                </v-tab>
+                <!--<v-tab key="home" href="/">Домашняя</v-tab>
+                <v-tab key="events" href="/events">События</v-tab>
+                <v-tab key="podcasts" href="/podcasts">Подкасты</v-tab>
+                <v-tab key="channels" href="/channels">Каналы</v-tab>
+                <v-tab key="blogs" href="/blogs">Блоги</v-tab>-->
             </v-tabs>
         </template>
     </v-toolbar>
@@ -38,6 +41,16 @@
 
 <script>
     module.exports = {
+        data: () => ({
+            active_tab: 1,
+            tabs: [
+                { id: 1, name: 'Домашняя', url: '/' },
+                { id: 2, name: 'События', url: '/events' },
+                { id: 3, name: 'Подкасты', url: '/podcasts' },
+                { id: 4, name: 'Каналы', url: '/channels' },
+                { id: 5, name: 'Блоги', url: '/blogs' }
+            ]
+        }),
         props: {
             title: {
                 type: String,
