@@ -42,7 +42,7 @@
 <script>
     module.exports = {
         data: () => ({
-            active_tab: 1,
+            active_tab: 2,
             tabs: [
                 { id: 1, name: 'Домашняя', url: '/' },
                 { id: 2, name: 'События', url: '/events' },
