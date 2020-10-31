@@ -25,7 +25,7 @@
         </v-text-field>
 
         <template v-slot:extension>
-            <v-tabs centered v-model="active_tab">
+            <v-tabs centered v-model="active_tab" @change="changeActiveTab($event)">
                 <v-tab v-for="tab of tabs" :key="tab.id" :href="tab.url">
                     {{tab.name}}
                 </v-tab>
@@ -42,7 +42,7 @@
 <script>
     module.exports = {
         data: () => ({
-            active_tab: 2,
+            active_tab: 1,
             tabs: [
                 { id: 1, name: 'Домашняя', url: '/' },
                 { id: 2, name: 'События', url: '/events' },
@@ -56,6 +56,11 @@
                 type: String,
                 required: false,
                 default: 'Awesome Russian IT'
+            }
+        },
+        methods: {
+            changeActiveTab(val) {
+                this.active_tab = 2;
             }
         }
     }

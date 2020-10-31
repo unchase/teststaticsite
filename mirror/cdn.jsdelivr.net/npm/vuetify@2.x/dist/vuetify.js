@@ -14219,7 +14219,8 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_10__["default"])(_
       animate: false,
       animateTimeout: -1,
       isActive: !!this.value,
-      stackMinZIndex: 200
+      stackMinZIndex: 200,
+      previousActiveElement: null
     };
   },
   computed: {
@@ -14240,12 +14241,15 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_10__["default"])(_
   },
   watch: {
     isActive: function isActive(val) {
+      var _a;
+
       if (val) {
         this.show();
         this.hideScroll();
       } else {
         this.removeOverlay();
         this.unbind();
+        (_a = this.previousActiveElement) === null || _a === void 0 ? void 0 : _a.focus();
       }
     },
     fullscreen: function fullscreen(val) {
@@ -14310,11 +14314,16 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_10__["default"])(_
     show: function show() {
       var _this = this;
 
-      !this.fullscreen && !this.hideOverlay && this.genOverlay();
-      this.$nextTick(function () {
-        _this.$refs.content.focus();
+      !this.fullscreen && !this.hideOverlay && this.genOverlay(); // Double nextTick to wait for lazy content to be generated
 
-        _this.bind();
+      this.$nextTick(function () {
+        _this.$nextTick(function () {
+          _this.previousActiveElement = document.activeElement;
+
+          _this.$refs.content.focus();
+
+          _this.bind();
+        });
       });
     },
     bind: function bind() {
@@ -22723,7 +22732,13 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_14__["default"])(_
       var uniqueValues = new Map();
 
       for (var index = 0; index < arr.length; ++index) {
-        var item = arr[index];
+        var item = arr[index]; // Do not deduplicate headers or dividers (#12517)
+
+        if (item.header || item.divider) {
+          uniqueValues.set(item, item);
+          continue;
+        }
+
         var val = this.getValue(item); // TODO: comparator
 
         !uniqueValues.has(val) && uniqueValues.set(val, item);
@@ -27713,7 +27728,7 @@ var dirtyTypes = ['color', 'file', 'time', 'date', 'datetime-local', 'week', 'mo
         return this.counterValue(this.internalValue);
       }
 
-      return __spread(this.internalValue || '').length;
+      return __spread((this.internalValue || '').toString()).length;
     },
     hasCounter: function hasCounter() {
       return this.counter !== false && this.counter != null;
@@ -33363,7 +33378,7 @@ function () {
 
   Vuetify.install = _install__WEBPACK_IMPORTED_MODULE_0__["install"];
   Vuetify.installed = false;
-  Vuetify.version = "2.3.15";
+  Vuetify.version = "2.3.16";
   Vuetify.config = {
     silent: false
   };
