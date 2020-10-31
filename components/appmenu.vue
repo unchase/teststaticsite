@@ -25,7 +25,7 @@
         </v-text-field>
 
         <template v-slot:extension>
-            <v-tabs centered v-model="active_tab" @change="changeActiveTab($event)">
+            <v-tabs centered v-model="active_tab" @change="changeActiveTab()">
                 <v-tab v-for="tab of tabs" :key="tab.id" :href="tab.url">
                     {{tab.name}}
                 </v-tab>
@@ -59,7 +59,7 @@
             }
         },
         methods: {
-            changeActiveTab(val) {
+            changeActiveTab() {
                 this.active_tab = 2;
             }
         }
