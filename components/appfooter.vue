@@ -44,7 +44,6 @@
 
 
                 <v-btn v-for="(link, j) in links"
-                       :key="j"
                        :href="link.url"
                        dark
                        icon
