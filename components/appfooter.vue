@@ -91,7 +91,7 @@
                 { icon_name: 'fab fa-github-square', title: 'GitHub.com', profile_url: 'https://github.com/unchase' },
                 { icon_name: 'fab fa-medium', title: 'Medium.com', profile_url: 'https://medium.com/@unchase' },
                 { icon_name: 'fab fa-dev', title: 'Dev.to', profile_url: 'https://dev.to/unchase' },
-                { icon_name: 'fab fa-globe', title: 'Habr.com', profile_url: 'https://habr.com/ru/users/unchase' }
+                { icon_name: 'fab fa-hire-a-helper', title: 'Habr.com', profile_url: 'https://habr.com/ru/users/unchase' }
             ]
         }),
         props: {
