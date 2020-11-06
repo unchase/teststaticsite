@@ -45,15 +45,18 @@
                 <!--<v-btn dark icon href="https://medium.com/@unchase" target="_blank">
                     <v-icon size="24px" v-text="">fab fa-medium</v-icon>
                 </v-btn>-->
-                <v-btn
-                    v-for="(icon, i) in socialIcons"
-                    :key="i"
-                    :href="icon.profile_url"
-                    dark
-                    icon
-                    target="_blank"
-                >
-                    <v-icon size="24px" v-text="">{{ icon.icon_name }}</v-icon>
+                <v-btn v-for="(icon, i) in socialIcons"
+                       :key="i"
+                       :href="icon.profile_url"
+                       dark
+                       icon
+                       target="_blank">
+                    <v-tooltip top>
+                        <template v-slot:activator="{ on, attrs }">
+                            <v-icon size="24px" v-text="">{{ icon.icon_name }}</v-icon>
+                        </template>
+                        <span>{{ icon.title }}</span>
+                    </v-tooltip>
                 </v-btn>
             </v-card-title>
         </v-card>
