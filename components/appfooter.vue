@@ -53,7 +53,7 @@
                     icon
                     target="_blank"
                 >
-                    <v-icon size="24px" v-text="">{{ icon.icon_name }}</v-icon>
+                    <v-icon size="40px" v-text="">{{ icon.icon_name }}</v-icon>
                 </v-btn>
             </v-card-title>
         </v-card>
