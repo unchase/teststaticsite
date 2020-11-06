@@ -43,7 +43,7 @@
                 <strong style="margin-left:10px;" class="subheading">Оставайтесь на связи со мной в социальных сетях!</strong>
                 <v-spacer></v-spacer>
                 <v-btn dark icon href="https://medium.com/@unchase">
-                    <v-icon size="24px" v-text=""></v-icon>
+                    <v-icon size="24px" v-text="">fab fa-vuejs</v-icon>
                 </v-btn>
                 <!--<v-btn
         v-for="(icon, i) in socialIcons"
