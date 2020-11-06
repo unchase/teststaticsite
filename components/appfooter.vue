@@ -37,10 +37,10 @@
                 <!--<v-btn icon>
         <v-icon size="24px" v-text=""></v-icon>
     </v-btn>-->
-                <strong style="margin-right:10px;" class="subheading">Оставайтесь на связи со мной в социальных сетях!</strong>
-                <a href="https://www.buymeacoffee.com/nikolaychebotov" target="_blank">
-                    <img src="https://img.buymeacoffee.com/button-api/?text=Support me!&emoji=🙏&slug=nikolaychebotov&button_colour=ff8614&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=FFDD00">
+                <a href="https://www.buymeacoffee.com/nikolaychebotov" target="_blank" style="margin-right:10px;">
+                    <img src="https://img.buymeacoffee.com/button-api/?text=Поддержите меня!&emoji=🙏&slug=nikolaychebotov&button_colour=ff8614&font_colour=000000&font_family=Arial&outline_colour=000000&coffee_colour=FFDD00">
                 </a>
+                <strong class="subheading">Оставайтесь на связи со мной в социальных сетях!</strong>
                 <v-spacer></v-spacer>
                 <v-btn dark icon href="https://medium.com/@unchase">
                     <v-icon size="24px" v-text=""></v-icon>
