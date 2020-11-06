@@ -26,6 +26,7 @@
 
         <template v-slot:extension>
             <v-tabs centered v-model="active_tab" optional @change="changeActiveTab()">
+                <v-tab class="pa-0 ma-0" style="min-width:0px" />
                 <v-tab v-for="tab of tabs" :key="tab.id" :href="tab.url">
                     {{tab.name}}
                 </v-tab>
