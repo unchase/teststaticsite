@@ -34,15 +34,6 @@
                 flat
                 tile>
             <v-card-title class="orange darken-2 white--text">
-                <!--<v-btn icon>
-        <v-icon size="24px" v-text=""></v-icon>
-    </v-btn>-->
-                <a href="https://www.buymeacoffee.com/nikolaychebotov" target="_blank">
-                    <img src="https://img.buymeacoffee.com/button-api/?text=Support me!&emoji=🙏&slug=nikolaychebotov&button_colour=ff8614&font_colour=000000&font_family=Bree&outline_colour=000000&coffee_colour=FFDD00">
-                </a>
-
-
-
                 <v-btn v-for="(link, j) in links"
                        :href="link.url"
                        :key="(j + 10)"
@@ -51,22 +42,14 @@
                        style="margin-left: 10px;">
                     <v-icon size="30px" :v-text="link.title">{{ link.icon }}</v-icon>
                 </v-btn>
-
+                <a href="https://www.buymeacoffee.com/nikolaychebotov" style="margin-left:10px;"  target="_blank">
+                    <img src="https://img.buymeacoffee.com/button-api/?text=Support me!&emoji=🙏&slug=nikolaychebotov&button_colour=ff8614&font_colour=000000&font_family=Bree&outline_colour=000000&coffee_colour=FFDD00">
+                </a>
                 <strong style="margin-left:10px;" class="subheading">Оставайтесь на связи со мной в социальных сетях!</strong>
-
-                <!--<a style="margin-left:10px;" href="/get-involved">
-        <div>Принять участие</div>
-    </a>
-    <a style="margin-left:10px;" href="/suggest">
-        <div>Предложить</div>
-    </a>
-    <a style="margin-left:10px;" href="/api">
-        <div>API</div>
-    </a>-->
                 <v-spacer></v-spacer>
                 <!--<v-btn dark icon href="https://medium.com/@unchase" target="_blank">
-        <v-icon size="24px" v-text="">fab fa-medium</v-icon>
-    </v-btn>-->
+                    <v-icon size="24px" v-text="">fab fa-medium</v-icon>
+                </v-btn>-->
                 <v-btn v-for="(icon, i) in socialIcons"
                        :key="i"
                        :href="icon.profile_url"
