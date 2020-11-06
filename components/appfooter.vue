@@ -46,7 +46,7 @@
                     <v-icon size="24px" v-text="">fab fa-medium</v-icon>
                 </v-btn>-->
                 <v-btn
-                    v-for="(icon, i) in getSocialIcons"
+                    v-for="(icon, i) in socialIcons"
                     :key="i"
                     :href="icon.profile_url"
                     dark
@@ -101,9 +101,6 @@
         computed: {
             getCurrentYear() {
                 return (new Date()).getFullYear();
-            },
-            getSocialIcons() {
-                return this.socialIcons;
             }
         }
     }
