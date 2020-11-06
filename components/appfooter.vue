@@ -57,6 +57,11 @@
                     <v-icon size="30px" v-text="">{{ icon.icon_name }}</v-icon>
                 </v-btn>
             </v-card-title>
+            <v-card-text class="orange darken-2 white--text">
+                <a href="https://www.buymeacoffee.com/nikolaychebotov" target="_blank">
+                    <strong class="subheading">Тест!</strong>
+                </a>
+            </v-card-text>
         </v-card>
 
         <v-footer height="auto"
