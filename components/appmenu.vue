@@ -25,7 +25,7 @@
         </v-text-field>
 
         <template v-slot:extension>
-            <v-tabs centered v-model="active_tab" @change="changeActiveTab()">
+            <v-tabs centered v-model="active_tab" optional @change="changeActiveTab()">
                 <v-tab v-for="tab of tabs" :key="tab.id" :href="tab.url">
                     {{tab.name}}
                 </v-tab>
