@@ -41,7 +41,19 @@
                     <img src="https://img.buymeacoffee.com/button-api/?text=Support me!&emoji=🙏&slug=nikolaychebotov&button_colour=ff8614&font_colour=000000&font_family=Bree&outline_colour=000000&coffee_colour=FFDD00">
                 </a>
                 <strong style="margin-left:10px;" class="subheading">Оставайтесь на связи со мной в социальных сетях!</strong>
-                <a style="margin-left:10px;" href="/get-involved">
+
+
+                <v-btn v-for="(link, j) in links"
+                       :key="j"
+                       :href="link.url"
+                       dark
+                       icon
+                       style="margin-left: 10px;">
+                    <v-icon size="30px" :v-text="link.title"></v-icon>
+                </v-btn>
+
+
+                <!--<a style="margin-left:10px;" href="/get-involved">
                     <div>Принять участие</div>
                 </a>
                 <a style="margin-left:10px;" href="/suggest">
@@ -49,7 +61,7 @@
                 </a>
                 <a style="margin-left:10px;" href="/api">
                     <div>API</div>
-                </a>
+                </a>-->
                 <v-spacer></v-spacer>
                 <!--<v-btn dark icon href="https://medium.com/@unchase" target="_blank">
         <v-icon size="24px" v-text="">fab fa-medium</v-icon>
@@ -100,6 +112,10 @@
                 { icon_name: 'fab fa-medium', title: 'Medium.com', profile_url: 'https://medium.com/@unchase' },
                 { icon_name: 'fab fa-dev', title: 'Dev.to', profile_url: 'https://dev.to/unchase' },
                 { icon_name: 'fab fa-hire-a-helper', title: 'Habr.com', profile_url: 'https://habr.com/ru/users/unchase' }
+            ],
+            links: [
+                { title: 'Принять участие', url: '/get-involved' },
+                { title: 'Предложить', url: '/suggest' }
             ]
         }),
         props: {
