@@ -3,9 +3,10 @@
                dark
                flat
                max-height="120">
-        <v-icon large left>
-            mdi-monitor-star
-        </v-icon>
+
+        <a href="/" style="height: inherit;">
+            <img src="/assets/logo.png" style="height: inherit; margin-top: 5px; margin-right: 5px;">
+        </a>
 
         <v-toolbar-title class="headline">{{ title }}</v-toolbar-title>
 
