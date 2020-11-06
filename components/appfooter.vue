@@ -52,8 +52,9 @@
                     dark
                     icon
                     target="_blank"
+                    style="margin-left: 30px;"
                 >
-                    <v-icon size="40px" v-text="">{{ icon.icon_name }}</v-icon>
+                    <v-icon size="30px" v-text="">{{ icon.icon_name }}</v-icon>
                 </v-btn>
             </v-card-title>
         </v-card>
