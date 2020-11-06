@@ -41,8 +41,14 @@
                     <img src="https://img.buymeacoffee.com/button-api/?text=Support me!&emoji=🙏&slug=nikolaychebotov&button_colour=ff8614&font_colour=000000&font_family=Bree&outline_colour=000000&coffee_colour=FFDD00">
                 </a>
                 <strong style="margin-left:10px;" class="subheading">Оставайтесь на связи со мной в социальных сетях!</strong>
-                <a style="margin-left:10px;" href="https://www.buymeacoffee.com/nikolaychebotov" target="_blank">
-                    <strong class="subheading">Тест!</strong>
+                <a style="margin-left:10px;" href="/get-involved">
+                    <div>Принять участие</div>
+                </a>
+                <a style="margin-left:10px;" href="/suggest">
+                    <div>Предложить</div>
+                </a>
+                <a style="margin-left:10px;" href="/api">
+                    <div>API</div>
                 </a>
                 <v-spacer></v-spacer>
                 <!--<v-btn dark icon href="https://medium.com/@unchase" target="_blank">
