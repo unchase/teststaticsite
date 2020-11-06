@@ -45,10 +45,11 @@
 
                 <v-btn v-for="(link, j) in links"
                        :href="link.url"
+                       :key="(j + 10)"
                        dark
                        icon
                        style="margin-left: 10px;">
-                    <v-icon size="30px" :v-text="link.title"></v-icon>
+                    <v-icon size="30px" :v-text="">{{ link.icon }}</v-icon>
                 </v-btn>
 
 
@@ -113,8 +114,8 @@
                 { icon_name: 'fab fa-hire-a-helper', title: 'Habr.com', profile_url: 'https://habr.com/ru/users/unchase' }
             ],
             links: [
-                { title: 'Принять участие', url: '/get-involved' },
-                { title: 'Предложить', url: '/suggest' }
+                { title: 'Принять участие', url: '/get-involved', icon: 'mdi-source-pull' },
+                { title: 'Предложить', url: '/suggest', icon: 'mdi-plus-box' }
             ]
         }),
         props: {
