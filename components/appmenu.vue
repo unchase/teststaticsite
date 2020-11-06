@@ -3,13 +3,6 @@
                dark
                flat
                max-height="120">
-        <!--<v-icon
-        large
-        color="green darken-2"
-    >
-        mdi-domain
-    </v-icon>-->
-
         <v-icon large left>
             mdi-monitor-star
         </v-icon>
@@ -25,15 +18,10 @@
         </v-text-field>
 
         <template v-slot:extension>
-            <v-tabs centered v-model="active_tab" optional hide-slider @change="changeActiveTab()">
+            <v-tabs centered v-model="active_tab" optional hide-slider>
                 <v-tab v-for="tab of tabs" :key="tab.id" :href="tab.url">
                     {{tab.name}}
                 </v-tab>
-                <!--<v-tab key="home" href="/">Домашняя</v-tab>
-                <v-tab key="events" href="/events">События</v-tab>
-                <v-tab key="podcasts" href="/podcasts">Подкасты</v-tab>
-                <v-tab key="channels" href="/channels">Каналы</v-tab>
-                <v-tab key="blogs" href="/blogs">Блоги</v-tab>-->
             </v-tabs>
         </template>
     </v-toolbar>
@@ -56,11 +44,6 @@
                 type: String,
                 required: false,
                 default: 'Awesome Russian IT'
-            }
-        },
-        methods: {
-            changeActiveTab() {
-                this.active_tab = 2;
             }
         }
     }
