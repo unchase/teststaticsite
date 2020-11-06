@@ -69,7 +69,16 @@
                         xs12
                         sm6
                         pl-3>
-                    Сделано с <v-icon small color="red lighten-1">mdi-heart</v-icon> Чеботовым Николаем <a href="https://unchase.ru" target="_blank">(Unchase)</a> с использованием <a href="https://vuetifyjs.com?ref=unchase" target="_blank">Vuetify</a> и <a href="https://statiq.dev/" target="_blank">Statiq</a>
+                    Сделано с <v-icon small color="red lighten-1">mdi-heart</v-icon> Чеботовым Николаем <a href="https://unchase.ru" target="_blank">(Unchase)</a> с использованием <a href="https://vuetifyjs.com?ref=unchase" target="_blank">Vuetify</a> и <a href="https://statiq.dev/" target="_blank">Statiq</a>.
+                </v-flex>
+                <v-flex class="attribution"
+                        text-xs-center
+                        text-sm-left
+                        white--text
+                        xs12
+                        sm6
+                        pl-3>
+                    Данные обновляются примерно каждые 2 часа.
                 </v-flex>
                 <v-flex class="attribution"
                         text-xs-center
