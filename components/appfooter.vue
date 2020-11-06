@@ -36,7 +36,7 @@
             <v-card-title class="orange darken-2 white--text">
                 <v-btn v-for="(link, j) in links"
                        :href="link.url"
-                       :key="(j + 10)"
+                       :key="(j + socialIcons.length + 1)"
                        dark
                        icon
                        style="margin-left: 10px;">
@@ -47,9 +47,6 @@
                 </a>
                 <strong style="margin-left:10px;" class="subheading">Оставайтесь на связи со мной в социальных сетях!</strong>
                 <v-spacer></v-spacer>
-                <!--<v-btn dark icon href="https://medium.com/@unchase" target="_blank">
-                    <v-icon size="24px" v-text="">fab fa-medium</v-icon>
-                </v-btn>-->
                 <v-btn v-for="(icon, i) in socialIcons"
                        :key="i"
                        :href="icon.profile_url"
