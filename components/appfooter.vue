@@ -49,7 +49,7 @@
                        dark
                        icon
                        style="margin-left: 10px;">
-                    <v-icon size="30px" :v-text="">{{ link.icon }}</v-icon>
+                    <v-icon size="30px" :v-text="link.title">{{ link.icon }}</v-icon>
                 </v-btn>
 
 
