@@ -103,7 +103,7 @@
                 return (new Date()).getFullYear();
             },
             getSocialIcons() {
-                return socialIcons;
+                return this.socialIcons;
             }
         }
     }
