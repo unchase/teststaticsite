@@ -63,6 +63,7 @@
                 { icon_name: 'fab fa-medium', title: 'Medium.com', profile_url: 'https://medium.com/@unchase' },
                 { icon_name: 'fab fa-dev', title: 'Dev.to', profile_url: 'https://dev.to/unchase' },
                 { icon_name: 'fab fa-twitter-square', title: 'Twitter.com', profile_url: 'https://twitter.com/unchase12' },
+                { icon_name: 'fab fa-facebook-square', title: 'Facebook.com', profile_url: 'https://www.facebook.com/unchase' },
                 { icon_name: 'fab fa-hire-a-helper', title: 'Habr.com', profile_url: 'https://habr.com/ru/users/unchase' }
             ],
             links: [
