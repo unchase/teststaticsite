@@ -41,31 +41,27 @@
                     <img src="https://img.buymeacoffee.com/button-api/?text=Support me!&emoji=🙏&slug=nikolaychebotov&button_colour=ff8614&font_colour=000000&font_family=Bree&outline_colour=000000&coffee_colour=FFDD00">
                 </a>
                 <strong style="margin-left:10px;" class="subheading">Оставайтесь на связи со мной в социальных сетях!</strong>
+                <a style="margin-left:10px;" href="https://www.buymeacoffee.com/nikolaychebotov" target="_blank">
+                    <strong class="subheading">Тест!</strong>
+                </a>
                 <v-spacer></v-spacer>
                 <!--<v-btn dark icon href="https://medium.com/@unchase" target="_blank">
-                    <v-icon size="24px" v-text="">fab fa-medium</v-icon>
-                </v-btn>-->
-                <v-btn
-                    v-for="(icon, i) in socialIcons"
-                    :key="i"
-                    :href="icon.profile_url"
-                    dark
-                    icon
-                    target="_blank"
-                    style="margin-left: 30px;"
-                >
+        <v-icon size="24px" v-text="">fab fa-medium</v-icon>
+    </v-btn>-->
+                <v-btn v-for="(icon, i) in socialIcons"
+                       :key="i"
+                       :href="icon.profile_url"
+                       dark
+                       icon
+                       target="_blank"
+                       style="margin-left: 30px;">
                     <v-icon size="30px" v-text="">{{ icon.icon_name }}</v-icon>
                 </v-btn>
             </v-card-title>
-            <v-card-text class="orange darken-3 white--text">
-                <a href="https://www.buymeacoffee.com/nikolaychebotov" target="_blank">
-                    <strong class="subheading">Тест!</strong>
-                </a>
-            </v-card-text>
         </v-card>
 
         <v-footer height="auto"
-                  color="orange darken-4">
+                  color="orange darken-3">
             <v-layout row wrap>
                 <v-flex class="attribution"
                         text-xs-center
